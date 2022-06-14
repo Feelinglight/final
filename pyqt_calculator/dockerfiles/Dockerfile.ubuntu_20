@@ -1,0 +1,19 @@
+FROM ubuntu:20.04
+
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
+    apt-get install -yq python3 python3-pip debhelper libqt5gui5 python3.8-venv && \
+    apt-get clean
+
+RUN pip install PyQt5 pyinstaller pyqt-new-window-handler absresgetter pyqt-resource-helper pyqt-style-setter pytest
+
+
+# RUN apt-get install -y git && \
+#     git clone https://github.com/Feelinglight/pyqt_calculator
+
+# WORKDIR /pyqt_calculator
+
+# RUN pip install .
+
+# RUN python3 build_deb.py
